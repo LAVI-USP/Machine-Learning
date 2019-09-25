@@ -34,7 +34,6 @@
 
 #%%
 
-import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -46,8 +45,8 @@ from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout
 def data_preprocess(x_train, y_train, x_test, y_test, param):
     
     # Converts a class vector (integers) to binary class matrix.  
-    y_train_out = tf.keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
-    y_test_out = tf.keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
+    y_train_out = keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
+    y_test_out = keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
     
     # Normalize data
     x_train_out =  x_train / 255
@@ -98,6 +97,7 @@ def data_show(x_test,y_test,prediction,nimages):
         subplot.set_title("{}".format(fashion_mnist_labels[predict_index]), 
                     color=("green" if predict_index == true_index else "red"))
     
+    plt.show()
     return 
     
 #%% **************************** Main Code ************************************

@@ -37,13 +37,12 @@ rodrigo.vimieiro@gmail.com
 
 #%% Imports
 
-import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 
 from tensorflow.python import keras
 from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout, MaxPooling2D, Reshape, UpSampling2D, Conv2DTranspose
+from tensorflow.python.keras.layers import Conv2D, MaxPooling2D, UpSampling2D, Conv2DTranspose
 
 #%% Data preprocess
 def data_preprocess(x_train, y_train, x_test, y_test, param):
