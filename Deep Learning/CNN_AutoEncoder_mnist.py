@@ -49,8 +49,8 @@ def data_preprocess(x_train, y_train, x_test, y_test, param):
 
     # Converts a class vector (integers) to binary class matrix.
     # One-hot encoding
-    y_train_out = tf.keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
-    y_test_out = tf.keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
+    y_train_out = keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
+    y_test_out = keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
 
     # Normalize data (0-255 -> 0-1)
     x_train_out =  x_train / 255
