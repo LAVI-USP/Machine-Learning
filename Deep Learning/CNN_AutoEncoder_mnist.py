@@ -37,20 +37,19 @@ rodrigo.vimieiro@gmail.com
 
 #%%
 
-import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 
 from tensorflow.python import keras
 from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout, MaxPooling2D, Reshape, UpSampling2D, Conv2DTranspose
+from tensorflow.python.keras.layers import Conv2D, MaxPooling2D, UpSampling2D, Conv2DTranspose
 
 #%%
 def data_preprocess(x_train, y_train, x_test, y_test, param):
     
     # Converts a class vector (integers) to binary class matrix.  
-    y_train_out = tf.keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
-    y_test_out = tf.keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
+    y_train_out = keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
+    y_test_out = keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
     
     # Normalize data
     x_train_out =  x_train / 255
@@ -82,6 +81,7 @@ def data_show(x_test,prediction,nimages):
         
         subplot = figure.add_subplot(2, 5, (i + 1) + nimages, xticks=[], yticks=[])
         subplot.imshow(np.squeeze(prediction[index]),'gray')
+    plt.show()
     return 
 
 #%% **************************** Main Code ************************************

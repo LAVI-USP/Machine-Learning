@@ -12,7 +12,7 @@ import numpy as np
 
 from tensorflow.python import keras
 from tensorflow.python.keras.models import Model,Sequential
-from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout, Activation, BatchNormalization, Reshape, UpSampling2D, Conv2DTranspose,Input, LeakyReLU
+from tensorflow.python.keras.layers import Dense, Dropout, Input, LeakyReLU
 from tensorflow.python.keras.optimizers import adam
 
 from tqdm import tqdm
@@ -88,6 +88,7 @@ def plot_generated_images(epoch, generator, examples=100, dim=(10,10), figsize=(
         plt.imshow(generated_images[i],'gray')
         plt.axis('off')
     plt.tight_layout()
+    plt.show()
     #plt.savefig('gan_generated_image %d.png' %epoch)
     
     

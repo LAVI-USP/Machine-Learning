@@ -38,7 +38,6 @@ rodrigo.vimieiro@gmail.com
 
 #%%
 
-import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -53,8 +52,8 @@ from tqdm import tqdm
 def data_preprocess(x_train, y_train, x_test, y_test, param):
     
     # Converts a class vector (integers) to binary class matrix.  
-    y_train_out = tf.keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
-    y_test_out = tf.keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
+    y_train_out = keras.utils.to_categorical(y_train,param['num_classes'],dtype='uint8')
+    y_test_out = keras.utils.to_categorical(y_test,param['num_classes'],dtype='uint8')
     
     # Normalize data
     x_train_out =  x_train / 255
@@ -163,6 +162,8 @@ def data_show(x_test,y_test,prediction,nimages):
         subplot = figure.add_subplot(3, 5, k + 1, xticks=[], yticks=[])
             
         subplot.imshow(np.squeeze(x_test[nrand])) 
+    
+    plt.show()
     
     return 
     
