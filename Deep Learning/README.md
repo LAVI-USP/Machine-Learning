@@ -16,7 +16,7 @@
 
 ## Contribute? 
 
-Fell free to make any [pull requests](https://github.com/rodrigovimieiro/OpenCodes/pulls) or send me an e-mail.
+Fell free to make any [pull requests](https://github.com/LAVI-USP/Machine-Learning/pulls) or send me an e-mail.
 
 
 
